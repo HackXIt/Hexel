@@ -3,8 +3,8 @@
 *.user
 
 # Directories
-bin
-bin-int
+bin/
+bin-int/
 
 # Prerequisites
 *.d
