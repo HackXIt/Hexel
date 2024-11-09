@@ -37,7 +37,14 @@
 
 ### Describe a logging system with your own words:
 
-- If you want to properly format and print messages to a client, a logging system helps you facilitate mechanisms such as LogLevels, format of the log message itself, colors of the log messages, variables and arguments provided to the log message.
+- If you want to properly format and print messages to a client, a logging system helps you facilitate mechanisms such as
+  - LogLevel or severity of the log message (`trace, warn, error, info, fatal, ...`)
+  - format of the log message itself (similar look for all messages, additional info such as timestamp, origin class, logger name, ...)
+  - colors of the log messages (highlights errors from info messages clearly)
+  - variables and arguments provided to the log message (write runtime data into log messages and not just static messages)
+  - Performance mechanisms such as lazy-loading
+- Creating that logging system manually would be quite the task on top of building the actual game engine
+- Additionally, a logging system is something we can provide to the user of our game engine. To not expose our internal API and also make it easier to switch out logging vendors, we can create a Wrapper API for the internal logging system used, and expose that wrapper
 
 ### What is the difference between git submodules and git subtrees?
 
@@ -54,6 +61,11 @@
 
 ### What is a build system in C++? Name 3 build systems:
 
+- A build system handles the creation and management of project files, compilation of translation units (i.e. source and header files) and structuring of our project folder (i.e. all output into the `\bin` folder)
+  - The build system can also handle caches (i.e. recompiling all sources is not always necessary)
+  - And it can detect changes in our sources and its dependencies, to trigger another compilation
+    (i.e. We need to rebuild X, because Y is a dependency, and Z changed there - or some other variant of that)
+  - It can also handle certain project files regarding the IDE in certain cases, so that configurations are kept up to date from an abstracted configuration source (i.e. what premake does)
 - Meson
 - CMake / Make / Ninja (they are similar - revolve around makefiles)
 - Premake (Lua based)
@@ -61,8 +73,13 @@
 
 ### What is a package manager in C++? Name 3 package manager:
 
+- A package manager handles dependencies of a project for pre-compiled / pre-existing packages / sources that are used by the project or system
+  - It allows for Version-pinning (i.e. My code MUST use a specific package version of X)
+  - It handles the download from some sort of repository
+  - It handles version-conflicts between different dependencies (maybe, depends on package manager)
 - There is no standard package manager in C++, however, there are some created by companies:
   - Conan (https://conan.io/) => JFrog
   - vcpkg (https://vcpkg.io/) => Microsoft 
   - xrepo (https://xrepo.xmake.io/#/) => OSS
   - ... some more: https://moderncppdevops.com/pkg-mngr-roundup/
+- Package managers also exist for various other systems, such as Linux. For example `apt` or `aptitude` is the standard package manager for `debian` systems.
