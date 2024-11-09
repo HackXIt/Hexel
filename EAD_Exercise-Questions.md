@@ -42,7 +42,15 @@
 ### What is the difference between git submodules and git subtrees?
 
 - Git submodules checks out a repository inside a subfolder and essentially tracks another database for that subfolder. This submodule is independent from the base repository and needs to be updated separately.
-- Git subtrees is just another working tree in the same repository, where you have multiple folders for different branches/commits you have checked out or tracked. There is no second repository.
+  - Submodules creates a `.gitmodules` file which states the different sub-folders which track an additional repository
+  - The actual subfolder are handled differently in the internal `.git` folder
+  - Easier to contribute to upstream, since navigating in that directory puts you in a separate repository, where you can utilize the regular `git` commands to interact with that upstream remote.
+  - Submodules need to be checked additionally when the base repository is checked out, otherwise their folders are empty: `git submodule init && git submodule update --recursive`
+- Git subtrees nests another repository inside a subfolder, but it integrates that other repository into the main repository. The fact that the subfolder tracks another repository is _"hidden"_ from the user and it also does not create additional metadata like submodules (`.gitmodules` file).
+  - Subtree requires a special merge strategy `git subtree`
+  - Contributing upstream code is more complicated
+  - Easier to mix base repository and sub-repository changes by accident (since the main interface is different)
+  - No additional check out needed
 
 ### What is a build system in C++? Name 3 build systems:
 
