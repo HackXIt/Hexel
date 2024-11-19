@@ -7,6 +7,12 @@
     <Filter Include="Hexel\Events">
       <UniqueIdentifier>{1FA2F00B-0B05-80B0-B48A-B866A0CC4B33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Hexel.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\Hexel\Log.h">
       <Filter>Hexel</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hexel\Window.h">
+      <Filter>Hexel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\hxpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\Hexel\Log.cpp">
       <Filter>Hexel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hxpch.cpp" />
   </ItemGroup>

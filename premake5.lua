@@ -11,6 +11,11 @@ workspace "Hexel"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Hexel/vendor/GLFW/include"
+include "Hexel/vendor/GLFW"
+
 project "Hexel"
 	location "Hexel"
 	kind "SharedLib"
@@ -30,7 +35,14 @@ project "Hexel"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+	links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
