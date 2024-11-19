@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "Hexel/Core.h"
 #include "spdlog/spdlog.h"
 
 namespace Hexel
