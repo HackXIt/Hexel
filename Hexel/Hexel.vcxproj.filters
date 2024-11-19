@@ -19,6 +19,10 @@
     <ClInclude Include="src\Hexel\Log.h">
       <Filter>Hexel</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hexel\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Hexel\Events\Event.h" />
+    <ClInclude Include="src\Hexel\Events\KeyEvent.h" />
+    <ClInclude Include="src\Hexel\Events\MouseEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hexel\Application.cpp">
