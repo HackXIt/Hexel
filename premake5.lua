@@ -18,6 +18,9 @@ project "Hexel"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "hxpch.h"
+	pchsource "Hexel/src/hxpch.cpp"
 
 	files
 	{

@@ -4,6 +4,9 @@
     <Filter Include="Hexel">
       <UniqueIdentifier>{9B524F0D-0767-77BE-D0E8-1A1E3CBC73EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hexel\Events">
+      <UniqueIdentifier>{1FA2F00B-0B05-80B0-B48A-B866A0CC4B33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Hexel.h" />
@@ -16,13 +19,22 @@
     <ClInclude Include="src\Hexel\EntryPoint.h">
       <Filter>Hexel</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hexel\Events\ApplicationEvent.h">
+      <Filter>Hexel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hexel\Events\Event.h">
+      <Filter>Hexel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hexel\Events\KeyEvent.h">
+      <Filter>Hexel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hexel\Events\MouseEvent.h">
+      <Filter>Hexel\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hexel\Log.h">
       <Filter>Hexel</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hexel\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Hexel\Events\Event.h" />
-    <ClInclude Include="src\Hexel\Events\KeyEvent.h" />
-    <ClInclude Include="src\Hexel\Events\MouseEvent.h" />
+    <ClInclude Include="src\hxpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hexel\Application.cpp">
@@ -31,5 +43,6 @@
     <ClCompile Include="src\Hexel\Log.cpp">
       <Filter>Hexel</Filter>
     </ClCompile>
+    <ClCompile Include="src\hxpch.cpp" />
   </ItemGroup>
 </Project>

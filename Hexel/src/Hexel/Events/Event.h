@@ -1,8 +1,7 @@
 #pragma once
 
+#include "hxpch.h"
 #include "Hexel/Core.h"
-#include <string>
-#include <functional>
 
 namespace Hexel {
 
